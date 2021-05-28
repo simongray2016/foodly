@@ -84,3 +84,30 @@ final ButtonStyle elevatedButtonStyle = ElevatedButton.styleFrom(
   padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(16.0)),
   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
 );
+
+final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
+  primary: kPrimaryColor,
+  minimumSize: Size(88, 36),
+  padding: EdgeInsets.symmetric(horizontal: 16),
+  shape: const RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(8)),
+  ),
+).copyWith(
+  side: MaterialStateProperty.resolveWith<BorderSide>(
+    (Set<MaterialState> states) {
+      return BorderSide(
+        color: kPrimaryColor,
+        width: 1,
+      ); // Defer to the widget's default.
+    },
+  ),
+);
+
+ButtonStyle buttonWithIconStyle(Color primaryColor) => ElevatedButton.styleFrom(
+      primary: primaryColor,
+      minimumSize: Size(88, 36),
+      padding: EdgeInsets.symmetric(horizontal: 16),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+      ),
+    );
