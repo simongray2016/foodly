@@ -102,3 +102,12 @@ final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
     },
   ),
 );
+
+ButtonStyle buttonWithIconStyle(Color primaryColor) => ElevatedButton.styleFrom(
+      primary: primaryColor,
+      minimumSize: Size(88, 36),
+      padding: EdgeInsets.symmetric(horizontal: 16),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+      ),
+    );
