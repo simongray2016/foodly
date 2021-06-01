@@ -1,1 +1,1 @@
-enum MenuState { home, profile }
+enum AuthState { Unknow, Authenticated, Unauthenticated }

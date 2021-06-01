@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'constants.dart';
+import 'controllers/bindings/init_biding.dart';
 import 'routes.dart';
 import 'screens/splash/splash_screen.dart';
 import 'theme.dart';
@@ -47,19 +47,12 @@ class FirebaseLoading extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: kPrimaryColor,
-        body: Center(child: Text('loading')),
-      ),
+      home: SplashScreen(),
     );
   }
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -68,6 +61,7 @@ class MyApp extends StatelessWidget {
       theme: theme(),
       initialRoute: SplashScreen.routeName,
       getPages: getPages,
+      initialBinding: InitBinding(),
     );
   }
 }
