@@ -2,15 +2,41 @@
 
 A new Flutter project.
 
-## Getting Started
+## Get all packages
 
-This project is a starting point for a Flutter application.
+```
+flutter pub get
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Run Flutter app on an attached device
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+```
+flutter run
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Run Flutter app in the Chrome browser
+
+```
+flutter run -d chrome
+```
+
+## Build to APK
+
+```
+flutter build apk
+```
+
+## Pretty dart file
+
+```
+flutter format .
+```
+
+## Generate commands
+
+```
+flutter clean
+flutter pub cache repair
+flutter packages pub run build_runner clean
+flutter packages pub run build_runner build
+```
