@@ -3,8 +3,8 @@ import 'package:foodly/constants.dart';
 import 'package:foodly/size_config.dart';
 import 'package:get/get.dart';
 
-import '/screens/sign_in/sign_in_screen.dart';
-import '/components/default_button.dart';
+import 'package:foodly/screens/sign_in/sign_in_screen.dart';
+import 'package:foodly/components/default_button.dart';
 import 'splash_content.dart';
 
 class Body extends StatefulWidget {
