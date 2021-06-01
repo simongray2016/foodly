@@ -47,7 +47,6 @@ class FirebaseLoading extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Saving money',
       home: Scaffold(
         backgroundColor: kPrimaryColor,
         body: Center(child: Text('loading')),
@@ -68,7 +67,7 @@ class MyApp extends StatelessWidget {
       title: 'Foodly',
       theme: theme(),
       initialRoute: SplashScreen.routeName,
-      routes: routes,
+      getPages: getPages,
     );
   }
 }
