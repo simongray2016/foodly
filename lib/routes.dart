@@ -3,11 +3,13 @@ import 'package:get/get.dart';
 
 import 'screens/home/home_screen.dart';
 import 'screens/sign_in/sign_in_screen.dart';
+import 'screens/sign_up/sign_up_screen.dart';
 import 'screens/splash/splash_screen.dart';
 
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => SplashScreen(),
   SignInScreen.routeName: (context) => SignInScreen(),
+  SignUpScreen.routeName: (context) => SignUpScreen(),
   HomeScreen.routeName: (context) => HomeScreen(),
 };
 
@@ -19,6 +21,11 @@ final List<GetPage> getPages = [
   GetPage(
     name: SignInScreen.routeName,
     page: () => SignInScreen(),
+    transition: Transition.rightToLeft,
+  ),
+  GetPage(
+    name: SignUpScreen.routeName,
+    page: () => SignUpScreen(),
     transition: Transition.rightToLeft,
   ),
   GetPage(
