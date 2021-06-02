@@ -9,6 +9,7 @@ const kAccentDarkBlueColor = Color(0xFF395998);
 
 const kTextColor = Color(0xFF010F07);
 const kGrayColor = Color(0xFF868686);
+const kMediumGrayColor = Color(0xFFF3F2F2);
 const kLightGrayColor = Color(0xFFFBFBFB);
 const kWhiteColor = Color(0xFFFFFFFF);
 
@@ -111,3 +112,15 @@ ButtonStyle buttonWithIconStyle(Color primaryColor) => ElevatedButton.styleFrom(
         borderRadius: BorderRadius.all(Radius.circular(8)),
       ),
     );
+
+final InputDecoration textfieldStyle = InputDecoration(
+  contentPadding: EdgeInsets.symmetric(
+    vertical: kDefaultPadding / 4,
+  ),
+  enabledBorder: UnderlineInputBorder(
+    borderSide: BorderSide(color: kMediumGrayColor),
+  ),
+  focusedBorder: UnderlineInputBorder(
+    borderSide: BorderSide(color: kGrayColor),
+  ),
+);

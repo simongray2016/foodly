@@ -8,9 +8,15 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login to Foodly"),
+        title: Center(
+          child: Text(
+            "Login to Foodly",
+          ),
+        ),
       ),
-      body: Body(),
+      body: SingleChildScrollView(
+        child: Body(),
+      ),
     );
   }
 }
