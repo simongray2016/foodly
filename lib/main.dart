@@ -2,7 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'controllers/bindings/init_biding.dart';
+import 'bindings/init_biding.dart';
+import 'controllers/auth_controller.dart';
 import 'routes.dart';
 import 'screens/splash/splash_screen.dart';
 import 'theme.dart';
@@ -25,24 +26,16 @@ class _FoodlyState extends State<Foodly> {
     return FutureBuilder(
       future: _initialization,
       builder: (context, snapshot) {
-        // Check for errors
-        // if (snapshot.hasError) {
-        // return SomethingWentWrong();
-        // }
-
-        // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
           return MyApp();
         }
-
-        // Otherwise, show something whilst waiting for initialization to complete
-        return FirebaseLoading();
+        return LoadingScreen();
       },
     );
   }
 }
 
-class FirebaseLoading extends StatelessWidget {
+class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -55,13 +48,21 @@ class FirebaseLoading extends StatelessWidget {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Foodly',
-      theme: theme(),
-      initialRoute: SplashScreen.routeName,
-      getPages: getPages,
-      initialBinding: InitBinding(),
+    return FutureBuilder<void>(
+      future: InitBinding.init(),
+      builder: (_, snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Foodly',
+            theme: theme(),
+            initialRoute: SplashScreen.routeName,
+            getPages: getPages,
+            onInit: () => Get.find<AuthController>().appInit(),
+          );
+        }
+        return LoadingScreen();
+      },
     );
   }
 }
