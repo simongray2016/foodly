@@ -10,6 +10,6 @@ class InitBinding {
         () async => await SharedPreferences.getInstance());
     Get.put<UserController>(UserController());
     Get.put<AuthController>(AuthController());
-    Get.lazyPut(() => ForgotPasswordController());
+    Get.put(ForgotPasswordController());
   }
 }
