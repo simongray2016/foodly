@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import 'package:foodly/screens/sign_in/sign_in_screen.dart';
 import 'package:foodly/components/default_button.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'walkthrough_content.dart';
 
 class Body extends StatefulWidget {
@@ -77,6 +78,8 @@ class _BodyState extends State<Body> {
                     DefaultButton(
                       text: "Get Started",
                       press: () {
+                        Get.find<SharedPreferences>()
+                            .setBool('isLauched', true);
                         Get.toNamed(SignInScreen.routeName);
                       },
                     ),
