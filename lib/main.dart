@@ -58,6 +58,7 @@ class MyApp extends StatelessWidget {
             theme: theme(),
             initialRoute: SplashScreen.routeName,
             getPages: getPages,
+            defaultTransition: Transition.rightToLeft,
             onInit: () => Get.find<AuthController>().appInit(),
           );
         }
