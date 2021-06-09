@@ -23,7 +23,7 @@ class DefaultButton extends StatelessWidget {
         child: Text(
           text.toUpperCase(),
           style: TextStyle(
-            fontSize: getProportionateScreenWidth(16),
+            fontSize: getProportionateScreenWidth(14),
             fontWeight: FontWeight.bold,
             letterSpacing: 0.8,
             color: kWhiteColor,

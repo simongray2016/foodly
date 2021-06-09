@@ -5,7 +5,7 @@ import 'package:foodly/size_config.dart';
 import '../constants.dart';
 
 class DefaultButtonWithIcon extends StatelessWidget {
-  final Icon icon;
+  final Widget icon;
   final String text;
   final VoidCallback press;
   final Color color;
@@ -33,7 +33,7 @@ class DefaultButtonWithIcon extends StatelessWidget {
                 text.toUpperCase(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: getProportionateScreenWidth(16),
+                    fontSize: getProportionateScreenWidth(14),
                     fontWeight: FontWeight.bold,
                     letterSpacing: 0.8,
                     color: kWhiteColor),
